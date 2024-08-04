@@ -161,7 +161,7 @@
 
                                 <button type="submit" class="btn btn-dark mr-2">Add to
                                     Cart</button>
-                                    {{-- <button type="submit" class="btn btn-dark add-cart mr-2">Add to
+                                {{-- <button type="submit" class="btn btn-dark add-cart mr-2">Add to
                                         Cart</button> --}}
                                 <a href="{{ route('cart.index') }}" class="btn btn-gray view-cart d-none">View cart</a>
                             </div>
@@ -443,54 +443,56 @@
                 <h2 class="section-title">Related Products</h2>
 
                 <div class="products-slider owl-carousel owl-theme dots-top dots-small">
-                    @foreach ($related as $item)
-                        <div class="product-default">
-                            <figure>
-                                <a href="{{ route('detail', ['id' => $item->id]) }}">
-                                    <img src="{{ asset('storage/images') }}/{{ $item->image }}" width="280"
-                                        height="280" alt="product">
-                                    <img src="{{ asset('storage/images') }}/{{ $item->image }}" width="280"
-                                        height="280" alt="product">
-                                </a>
-                                <div class="label-group">
-                                    <div class="product-label label-hot">HOT</div>
-                                    <div class="product-label label-sale">-20%</div>
-                                </div>
-                            </figure>
-                            <div class="product-details">
-                                <div class="category-list">
-                                    <a href="#" class="product-category">{{ $item->category->name }}</a>
-                                </div>
-                                <h3 class="product-title">
-                                    <a href="{{ route('detail', ['id' => $item->id]) }}">{{ $item->name }}</a>
-                                </h3>
-                                <div class="ratings-container">
-                                    <div class="product-ratings">
-                                        <span class="ratings" style="width:80%"></span>
-                                        <!-- End .ratings -->
-                                        <span class="tooltiptext tooltip-top"></span>
+                    @if ($product->category_id !=null)
+                        @foreach ($related as $item)
+                            <div class="product-default">
+                                <figure>
+                                    <a href="{{ route('detail', ['id' => $item->id]) }}">
+                                        <img src="{{ asset('storage/images') }}/{{ $item->image }}" width="280"
+                                            height="280" alt="product">
+                                        <img src="{{ asset('storage/images') }}/{{ $item->image }}" width="280"
+                                            height="280" alt="product">
+                                    </a>
+                                    <div class="label-group">
+                                        <div class="product-label label-hot">HOT</div>
+                                        <div class="product-label label-sale">-20%</div>
                                     </div>
-                                    <!-- End .product-ratings -->
+                                </figure>
+                                <div class="product-details">
+                                    <div class="category-list">
+                                        <a href="#" class="product-category">{{ $item->category->name }}</a>
+                                    </div>
+                                    <h3 class="product-title">
+                                        <a href="{{ route('detail', ['id' => $item->id]) }}">{{ $item->name }}</a>
+                                    </h3>
+                                    <div class="ratings-container">
+                                        <div class="product-ratings">
+                                            <span class="ratings" style="width:80%"></span>
+                                            <!-- End .ratings -->
+                                            <span class="tooltiptext tooltip-top"></span>
+                                        </div>
+                                        <!-- End .product-ratings -->
+                                    </div>
+                                    <!-- End .product-container -->
+                                    <div class="price-box">
+                                        <span class="old-price">{{ $item->price }}</span>
+                                        <span class="new-price">{{ $item->sale_price }}</span>
+                                    </div>
+                                    <!-- End .price-box -->
+                                    <div class="product-action">
+                                        <a href="#" title="Wishlist" class="btn-icon-wish"><i
+                                                class="icon-heart"></i></a>
+                                        <a href="{{ route('detail', ['id' => $item->id]) }}"
+                                            class="btn-icon btn-add-cart"><i class="fa fa-arrow-right"></i><span>SELECT
+                                                OPTIONS</span></a>
+                                        <a href="/#" class="btn-quickview" title="Quick View"><i
+                                                class="fas fa-external-link-alt"></i></a>
+                                    </div>
                                 </div>
-                                <!-- End .product-container -->
-                                <div class="price-box">
-                                    <span class="old-price">{{ $item->price }}</span>
-                                    <span class="new-price">{{ $item->sale_price }}</span>
-                                </div>
-                                <!-- End .price-box -->
-                                <div class="product-action">
-                                    <a href="#" title="Wishlist" class="btn-icon-wish"><i
-                                            class="icon-heart"></i></a>
-                                    <a href="{{ route('detail', ['id' => $item->id]) }}" class="btn-icon btn-add-cart"><i
-                                            class="fa fa-arrow-right"></i><span>SELECT
-                                            OPTIONS</span></a>
-                                    <a href="/#" class="btn-quickview" title="Quick View"><i
-                                            class="fas fa-external-link-alt"></i></a>
-                                </div>
+                                <!-- End .product-details -->
                             </div>
-                            <!-- End .product-details -->
-                        </div>
-                    @endforeach
+                        @endforeach
+                    @endif
 
                 </div>
                 <!-- End .products-slider -->
@@ -499,394 +501,6 @@
 
             <hr class="mt-0 m-b-5" />
 
-            <div class="product-widgets-container row pb-2">
-                <div class="col-lg-3 col-sm-6 pb-5 pb-md-0">
-                    <h4 class="section-sub-title">Featured Products</h4>
-                    <div class="product-default left-details product-widget">
-                        <figure>
-                            <a href="product.html">
-                                <img src="{{ asset('client_assets') }}/assets/images/products/small/product-1.jpg"
-                                    width="74" height="74" alt="product">
-                                <img src="{{ asset('client_assets') }}/assets/images/products/small/product-1-2.jpg"
-                                    width="74" height="74" alt="product">
-                            </a>
-                        </figure>
-
-                        <div class="product-details">
-                            <h3 class="product-title"> <a href="product.html">Ultimate 3D Bluetooth Speaker</a>
-                            </h3>
-
-                            <div class="ratings-container">
-                                <div class="product-ratings">
-                                    <span class="ratings" style="width:100%"></span>
-                                    <!-- End .ratings -->
-                                    <span class="tooltiptext tooltip-top"></span>
-                                </div>
-                                <!-- End .product-ratings -->
-                            </div>
-                            <!-- End .product-container -->
-
-                            <div class="price-box">
-                                <span class="product-price">$49.00</span>
-                            </div>
-                            <!-- End .price-box -->
-                        </div>
-                        <!-- End .product-details -->
-                    </div>
-
-                    <div class="product-default left-details product-widget">
-                        <figure>
-                            <a href="product.html">
-                                <img src="{{ asset('client_assets') }}/assets/images/products/small/product-2.jpg"
-                                    width="74" height="74" alt="product">
-                                <img src="{{ asset('client_assets') }}/assets/images/products/small/product-2-2.jpg"
-                                    width="74" height="74" alt="product">
-                            </a>
-                        </figure>
-
-                        <div class="product-details">
-                            <h3 class="product-title"> <a href="product.html">Brown Women Casual HandBag</a> </h3>
-
-                            <div class="ratings-container">
-                                <div class="product-ratings">
-                                    <span class="ratings" style="width:100%"></span>
-                                    <!-- End .ratings -->
-                                    <span class="tooltiptext tooltip-top">5.00</span>
-                                </div>
-                                <!-- End .product-ratings -->
-                            </div>
-                            <!-- End .product-container -->
-
-                            <div class="price-box">
-                                <span class="product-price">$49.00</span>
-                            </div>
-                            <!-- End .price-box -->
-                        </div>
-                        <!-- End .product-details -->
-                    </div>
-
-                    <div class="product-default left-details product-widget">
-                        <figure>
-                            <a href="product.html">
-                                <img src="{{ asset('client_assets') }}/assets/images/products/small/product-3.jpg"
-                                    width="74" height="74" alt="product">
-                                <img src="{{ asset('client_assets') }}/assets/images/products/small/product-3-2.jpg"
-                                    width="74" height="74" alt="product">
-                            </a>
-                        </figure>
-
-                        <div class="product-details">
-                            <h3 class="product-title"> <a href="product.html">Circled Ultimate 3D Speaker</a> </h3>
-
-                            <div class="ratings-container">
-                                <div class="product-ratings">
-                                    <span class="ratings" style="width:100%"></span>
-                                    <!-- End .ratings -->
-                                    <span class="tooltiptext tooltip-top"></span>
-                                </div>
-                                <!-- End .product-ratings -->
-                            </div>
-                            <!-- End .product-container -->
-
-                            <div class="price-box">
-                                <span class="product-price">$49.00</span>
-                            </div>
-                            <!-- End .price-box -->
-                        </div>
-                        <!-- End .product-details -->
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-sm-6 pb-5 pb-md-0">
-                    <h4 class="section-sub-title">Best Selling Products</h4>
-                    <div class="product-default left-details product-widget">
-                        <figure>
-                            <a href="product.html">
-                                <img src="{{ asset('client_assets') }}/assets/images/products/small/product-4.jpg"
-                                    width="74" height="74" alt="product">
-                                <img src="{{ asset('client_assets') }}/assets/images/products/small/product-4-2.jpg"
-                                    width="74" height="74" alt="product">
-                            </a>
-                        </figure>
-
-                        <div class="product-details">
-                            <h3 class="product-title"> <a href="product.html">Blue Backpack for the Young - S</a>
-                            </h3>
-
-                            <div class="ratings-container">
-                                <div class="product-ratings">
-                                    <span class="ratings" style="width:100%"></span>
-                                    <!-- End .ratings -->
-                                    <span class="tooltiptext tooltip-top">5.00</span>
-                                </div>
-                                <!-- End .product-ratings -->
-                            </div>
-                            <!-- End .product-container -->
-
-                            <div class="price-box">
-                                <span class="product-price">$49.00</span>
-                            </div>
-                            <!-- End .price-box -->
-                        </div>
-                        <!-- End .product-details -->
-                    </div>
-
-                    <div class="product-default left-details product-widget">
-                        <figure>
-                            <a href="product.html">
-                                <img src="{{ asset('client_assets') }}/assets/images/products/small/product-5.jpg"
-                                    width="74" height="74" alt="product">
-                                <img src="{{ asset('client_assets') }}/assets/images/products/small/product-5-2.jpg"
-                                    width="74" height="74" alt="product">
-                            </a>
-                        </figure>
-
-                        <div class="product-details">
-                            <h3 class="product-title"> <a href="product.html">Casual Spring Blue Shoes</a> </h3>
-
-                            <div class="ratings-container">
-                                <div class="product-ratings">
-                                    <span class="ratings" style="width:100%"></span>
-                                    <!-- End .ratings -->
-                                    <span class="tooltiptext tooltip-top"></span>
-                                </div>
-                                <!-- End .product-ratings -->
-                            </div>
-                            <!-- End .product-container -->
-
-                            <div class="price-box">
-                                <span class="product-price">$49.00</span>
-                            </div>
-                            <!-- End .price-box -->
-                        </div>
-                        <!-- End .product-details -->
-                    </div>
-
-                    <div class="product-default left-details product-widget">
-                        <figure>
-                            <a href="product.html">
-                                <img src="{{ asset('client_assets') }}/assets/images/products/small/product-6.jpg"
-                                    width="74" height="74" alt="product">
-                                <img src="{{ asset('client_assets') }}/assets/images/products/small/product-6-2.jpg"
-                                    width="74" height="74" alt="product">
-                            </a>
-                        </figure>
-
-                        <div class="product-details">
-                            <h3 class="product-title"> <a href="product.html">Men Black Gentle Belt</a> </h3>
-
-                            <div class="ratings-container">
-                                <div class="product-ratings">
-                                    <span class="ratings" style="width:100%"></span>
-                                    <!-- End .ratings -->
-                                    <span class="tooltiptext tooltip-top">5.00</span>
-                                </div>
-                                <!-- End .product-ratings -->
-                            </div>
-                            <!-- End .product-container -->
-
-                            <div class="price-box">
-                                <span class="product-price">$49.00</span>
-                            </div>
-                            <!-- End .price-box -->
-                        </div>
-                        <!-- End .product-details -->
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-sm-6 pb-5 pb-md-0">
-                    <h4 class="section-sub-title">Latest Products</h4>
-                    <div class="product-default left-details product-widget">
-                        <figure>
-                            <a href="product.html">
-                                <img src="{{ asset('client_assets') }}/assets/images/products/small/product-7.jpg"
-                                    width="74" height="74" alt="product">
-                                <img src="{{ asset('client_assets') }}/assets/images/products/small/product-7-2.jpg"
-                                    width="74" height="74" alt="product">
-                            </a>
-                        </figure>
-
-                        <div class="product-details">
-                            <h3 class="product-title"> <a href="product.html">Men Black Sports Shoes</a> </h3>
-
-                            <div class="ratings-container">
-                                <div class="product-ratings">
-                                    <span class="ratings" style="width:100%"></span>
-                                    <!-- End .ratings -->
-                                    <span class="tooltiptext tooltip-top"></span>
-                                </div>
-                                <!-- End .product-ratings -->
-                            </div>
-                            <!-- End .product-container -->
-
-                            <div class="price-box">
-                                <span class="product-price">$49.00</span>
-                            </div>
-                            <!-- End .price-box -->
-                        </div>
-                        <!-- End .product-details -->
-                    </div>
-
-                    <div class="product-default left-details product-widget">
-                        <figure>
-                            <a href="product.html">
-                                <img src="{{ asset('client_assets') }}/assets/images/products/small/product-8.jpg"
-                                    width="74" height="74" alt="product">
-                                <img src="{{ asset('client_assets') }}/assets/images/products/small/product-8-2.jpg"
-                                    width="74" height="74" alt="product">
-                            </a>
-                        </figure>
-
-                        <div class="product-details">
-                            <h3 class="product-title"> <a href="product.html">Brown-Black Men Casual Glasses</a>
-                            </h3>
-
-                            <div class="ratings-container">
-                                <div class="product-ratings">
-                                    <span class="ratings" style="width:100%"></span>
-                                    <!-- End .ratings -->
-                                    <span class="tooltiptext tooltip-top">5.00</span>
-                                </div>
-                                <!-- End .product-ratings -->
-                            </div>
-                            <!-- End .product-container -->
-
-                            <div class="price-box">
-                                <span class="product-price">$49.00</span>
-                            </div>
-                            <!-- End .price-box -->
-                        </div>
-                        <!-- End .product-details -->
-                    </div>
-
-                    <div class="product-default left-details product-widget">
-                        <figure>
-                            <a href="product.html">
-                                <img src="{{ asset('client_assets') }}/assets/images/products/small/product-9.jpg"
-                                    width="74" height="74" alt="product">
-                                <img src="{{ asset('client_assets') }}/assets/images/products/small/product-9-2.jpg"
-                                    width="74" height="74" alt="product">
-                            </a>
-                        </figure>
-
-                        <div class="product-details">
-                            <h3 class="product-title"> <a href="product.html">Black Men Casual Glasses</a> </h3>
-
-                            <div class="ratings-container">
-                                <div class="product-ratings">
-                                    <span class="ratings" style="width:100%"></span>
-                                    <!-- End .ratings -->
-                                    <span class="tooltiptext tooltip-top"></span>
-                                </div>
-                                <!-- End .product-ratings -->
-                            </div>
-                            <!-- End .product-container -->
-
-                            <div class="price-box">
-                                <span class="product-price">$49.00</span>
-                            </div>
-                            <!-- End .price-box -->
-                        </div>
-                        <!-- End .product-details -->
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-sm-6 pb-5 pb-md-0">
-                    <h4 class="section-sub-title">Top Rated Products</h4>
-                    <div class="product-default left-details product-widget">
-                        <figure>
-                            <a href="product.html">
-                                <img src="{{ asset('client_assets') }}/assets/images/products/small/product-10.jpg"
-                                    width="74" height="74" alt="product">
-                                <img src="{{ asset('client_assets') }}/assets/images/products/small/product-10-2.jpg"
-                                    width="74" height="74" alt="product">
-                            </a>
-                        </figure>
-
-                        <div class="product-details">
-                            <h3 class="product-title"> <a href="product.html">Basketball Sports Blue Shoes</a> </h3>
-
-                            <div class="ratings-container">
-                                <div class="product-ratings">
-                                    <span class="ratings" style="width:100%"></span>
-                                    <!-- End .ratings -->
-                                    <span class="tooltiptext tooltip-top"></span>
-                                </div>
-                                <!-- End .product-ratings -->
-                            </div>
-                            <!-- End .product-container -->
-
-                            <div class="price-box">
-                                <span class="product-price">$49.00</span>
-                            </div>
-                            <!-- End .price-box -->
-                        </div>
-                        <!-- End .product-details -->
-                    </div>
-
-                    <div class="product-default left-details product-widget">
-                        <figure>
-                            <a href="product.html">
-                                <img src="{{ asset('client_assets') }}/assets/images/products/small/product-11.jpg"
-                                    width="74" height="74" alt="product">
-                                <img src="{{ asset('client_assets') }}/assets/images/products/small/product-11-2.jpg"
-                                    width="74" height="74" alt="product">
-                            </a>
-                        </figure>
-
-                        <div class="product-details">
-                            <h3 class="product-title"> <a href="product.html">Men Sports Travel Bag</a> </h3>
-
-                            <div class="ratings-container">
-                                <div class="product-ratings">
-                                    <span class="ratings" style="width:100%"></span>
-                                    <!-- End .ratings -->
-                                    <span class="tooltiptext tooltip-top">5.00</span>
-                                </div>
-                                <!-- End .product-ratings -->
-                            </div>
-                            <!-- End .product-container -->
-
-                            <div class="price-box">
-                                <span class="product-price">$49.00</span>
-                            </div>
-                            <!-- End .price-box -->
-                        </div>
-                        <!-- End .product-details -->
-                    </div>
-
-                    <div class="product-default left-details product-widget">
-                        <figure>
-                            <a href="product.html">
-                                <img src="{{ asset('client_assets') }}/assets/images/products/small/product-12.jpg"
-                                    width="74" height="74" alt="product">
-                                <img src="{{ asset('client_assets') }}/assets/images/products/small/product-12-2.jpg"
-                                    width="74" height="74" alt="product">
-                            </a>
-                        </figure>
-
-                        <div class="product-details">
-                            <h3 class="product-title"> <a href="product.html">Brown HandBag</a> </h3>
-
-                            <div class="ratings-container">
-                                <div class="product-ratings">
-                                    <span class="ratings" style="width:100%"></span>
-                                    <!-- End .ratings -->
-                                    <span class="tooltiptext tooltip-top"></span>
-                                </div>
-                                <!-- End .product-ratings -->
-                            </div>
-                            <!-- End .product-container -->
-
-                            <div class="price-box">
-                                <span class="product-price">$49.00</span>
-                            </div>
-                            <!-- End .price-box -->
-                        </div>
-                        <!-- End .product-details -->
-                    </div>
-                </div>
-            </div>
             <!-- End .row -->
         </div>
         <!-- End .container -->

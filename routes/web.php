@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\CartsController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\PaymentsController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\AdminAuthenticate;
@@ -31,6 +32,8 @@ Route::get('/detail/{id}', [HomeController::class, 'detail'])->name('detail');
 //Cart
 Route::resource('cart', CartsController::class);
 // Route::get('cart', [CartsController::class, 'index'])->name('cart.index');
+Route::get('/order/complete/{orderId}', [CartsController::class, 'complete'])->name('order.complete');
+
 Route::get('checkout', [CartsController::class, 'checkout'])->name('cart.checkout');
 Route::post('Storecheckout', [CartsController::class, 'Storecheckout'])->name('cart.Storecheckout');
 

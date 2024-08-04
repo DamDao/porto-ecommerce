@@ -160,17 +160,30 @@ class CartsController extends Controller
             // Bổ sung các trường thông tin thanh toán khác nếu cần
         ]);
 
+        Carts::where('user_id', $user_id)->delete();
+
         if ($pay['radio'] == 1) {
             // Thực hiện thanh toán VNPay và chuyển hướng người dùng đến trang thanh toán VNPay
             return $this->vnpay_payment();
         } else {
             // Thực hiện các bước xử lý khác nếu có
             // Trả về view hoặc chuyển hướng người dùng đến trang khác tùy thuộc vào quy trình của bạn
-            return view('clinet.checkout', compact('cart', 'total'));
+            return redirect()->route('order.complete',['orderId' => $order->id]);
         }
     }
 
 
+    public function complete($orderId)
+    {
+        $order = Orders::with('orderItems.product')->find($orderId);
+        // dd($order);
+
+        if (!$order) {
+            return redirect()->route('home')->with('error', 'Order not found.');
+        }
+
+        return view('clinet.order_complete', compact('order'));
+    }
 
 
     /**
@@ -254,8 +267,13 @@ class CartsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Carts $carts)
+    public function destroy(Carts $cart)
     {
         //
+        // dd($cart);
+        // $cart=Carts::find($carts);
+        $cart->delete();
+
+        return redirect()->back();
     }
 }

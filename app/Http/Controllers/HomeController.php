@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Carts;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\ProductImages;
@@ -22,9 +23,10 @@ class HomeController extends Controller
         $category = Category::where('status', 1)->orWhere('deleted_at', null)->get();
         // dd($category);
         $latestProduct = DB::table('products')->orderBy('created_at', 'DESC')->paginate(3);
+        $listProduct = DB::table('products')->get();
         $productTrending = Product::where('is_trending', 1)->get();
         // dd($productTrending);
-        return view('clinet.home', compact('productTrending', 'latestProduct', 'category'));
+        return view('clinet.home', compact('productTrending', 'latestProduct', 'listProduct', 'category'));
     }
 
     /**
@@ -53,43 +55,13 @@ class HomeController extends Controller
         $searchCategory = Product::where('category_id', $id)->get();
         // dd($searchCategory);
         $category = Category::where('status', 1)->get();
+        $listProduct = DB::table('products')->get();
         $latestProduct = DB::table('products')->whereIn('id', $searchCategory->pluck('id'))->orderBy('created_at', 'DESC')->paginate(3);
         $productTrending = Product::where('is_trending', 1)->get();
         // dd($productTrending);
-        return view('clinet.home', compact('productTrending', 'latestProduct', 'category'));
+        return view('clinet.home', compact('productTrending', 'latestProduct', 'listProduct', 'category'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.
@@ -97,6 +69,7 @@ class HomeController extends Controller
     public function destroy(string $id)
     {
         //
+     
     }
 
     public function login()

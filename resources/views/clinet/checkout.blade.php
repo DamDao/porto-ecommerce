@@ -2,7 +2,7 @@
 @section('main')
     <main class="main main-test">
         <div class="container checkout-container">
-            <ul class="checkout-progress-bar d-flex justify-content-center flex-wrap">
+            {{-- <ul class="checkout-progress-bar d-flex justify-content-center flex-wrap">
                 <li>
                     <a href="cart.html">Shopping Cart</a>
                 </li>
@@ -12,7 +12,7 @@
                 <li class="disabled">
                     <a href="#">Order Complete</a>
                 </li>
-            </ul>
+            </ul> --}}
 
             <form action="{{ route('cart.Storecheckout') }}" method="POST" name="checkout-form" id="checkout-form">
                 @method('POST')

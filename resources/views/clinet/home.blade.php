@@ -178,14 +178,13 @@
                                                 class="fa fa-arrow-right"></i>
                                         </a>
                                     </div>
-                                    <a href="{{ route('detail', $item->id) }}" class="btn-quickview">Detail</a>
-                                    <div class="product-countdown-container">
+                                    {{-- <a href="{{ route('detail', $item->id) }}" class="btn-quickview">Detail</a> --}}
+                                    {{-- <div class="product-countdown-container">
                                         <span class="product-countdown-title">offer ends in:</span>
                                         <div class="product-countdown countdown-compact" data-until="2021, 10, 5"
                                             data-compact="true">
                                         </div>
-                                        <!-- End .product-countdown -->
-                                    </div>
+                                    </div> --}}
                                     <!-- End .product-countdown-container -->
                                 </figure>
                                 <div class="product-details">
@@ -254,199 +253,12 @@
                     </div>
                     <!-- End .brands-slider -->
 
-                    <div class="row products-widgets">
-                        <div class="col-sm-6 col-md-4 pb-4 pb-md-0 appear-animate" data-animation-name="fadeInLeftShorter"
-                            data-animation-delay="200">
-                            <div class="product-column">
-                                <h3 class="section-sub-title ls-n-20">Top Rated Products</h3>
-
-                                <div class="product-default left-details product-widget">
-                                    <figure>
-                                        <a href="demo1-product.html">
-                                            <img src="{{ asset('client_assets') }}/assets/images/demoes/demo1/products/small/product-4.jpg"
-                                                width="84" height="84" alt="product">
-                                            <img src="{{ asset('client_assets') }}/assets/images/demoes/demo1/products/small/product-4-2.jpg"
-                                                width="84" height="84" alt="product">
-                                        </a>
-                                    </figure>
-                                    <div class="product-details">
-                                        <h3 class="product-title"> <a href="demo1-product.html">Porto Extended
-                                                Camera</a> </h3>
-                                        <div class="ratings-container">
-                                            <div class="product-ratings">
-                                                <span class="ratings" style="width:100%"></span>
-                                                <!-- End .ratings -->
-                                                <span class="tooltiptext tooltip-top"></span>
-                                            </div>
-                                            <!-- End .product-ratings -->
-                                        </div>
-                                        <!-- End .product-container -->
-                                        <div class="price-box">
-                                            <span class="product-price">$49.00</span>
-                                        </div>
-                                        <!-- End .price-box -->
-                                    </div>
-                                    <!-- End .product-details -->
-                                </div>
-                                <div class="product-default left-details product-widget">
-                                    <figure>
-                                        <a href="demo1-product.html">
-                                            <img src="{{ asset('client_assets') }}/assets/images/demoes/demo1/products/small/product-5.jpg"
-                                                width="84" height="84" alt="product">
-                                            <img src="{{ asset('client_assets') }}/assets/images/demoes/demo1/products/small/product-5-2.jpg"
-                                                width="84" height="84" alt="product">
-                                        </a>
-                                    </figure>
-                                    <div class="product-details">
-                                        <h3 class="product-title"> <a href="demo1-product.html">Blue BackPack</a>
-                                        </h3>
-                                        <div class="ratings-container">
-                                            <div class="product-ratings">
-                                                <span class="ratings" style="width:100%"></span>
-                                                <!-- End .ratings -->
-                                                <span class="tooltiptext tooltip-top"></span>
-                                            </div>
-                                            <!-- End .product-ratings -->
-                                        </div>
-                                        <!-- End .product-container -->
-                                        <div class="price-box">
-                                            <span class="product-price">$49.00</span>
-                                        </div>
-                                        <!-- End .price-box -->
-                                    </div>
-                                    <!-- End .product-details -->
-                                </div>
-                                <div class="product-default left-details product-widget ">
-                                    <figure>
-                                        <a href="demo1-product.html">
-                                            <img src="{{ asset('client_assets') }}/assets/images/demoes/demo1/products/small/product-6.jpg"
-                                                width="84" height="84" alt="product">
-                                            <img src="{{ asset('client_assets') }}/assets/images/demoes/demo1/products/small/product-6-2.jpg"
-                                                width="84" height="84" alt="product">
-                                        </a>
-                                    </figure>
-                                    <div class="product-details">
-                                        <h3 class="product-title"> <a href="demo1-product.html">Casual Blue
-                                                Shoes</a> </h3>
-                                        <div class="ratings-container">
-                                            <div class="product-ratings">
-                                                <span class="ratings" style="width:100%"></span>
-                                                <!-- End .ratings -->
-                                                <span class="tooltiptext tooltip-top"></span>
-                                            </div>
-                                            <!-- End .product-ratings -->
-                                        </div>
-                                        <!-- End .product-container -->
-                                        <div class="price-box">
-                                            <span class="product-price">$49.00</span>
-                                        </div>
-                                        <!-- End .price-box -->
-                                    </div>
-                                    <!-- End .product-details -->
-                                </div>
-                            </div>
-                            <!-- End .product-column -->
-                        </div>
-                        <!-- End .col-md-4 -->
-
-                        <div class="col-sm-6 col-md-4 pb-4 pb-md-0 appear-animate" data-animation-name="fadeInLeftShorter"
-                            data-animation-delay="500">
-                            <div class="product-column">
-                                <h3 class="section-sub-title ls-n-20">Best Selling Products</h3>
-
-                                <div class="product-default left-details product-widget ">
-                                    <figure>
-                                        <a href="demo1-product.html">
-                                            <img src="{{ asset('client_assets') }}/assets/images/demoes/demo1/products/small/product-2.jpg"
-                                                width="84" height="84" alt="product">
-                                        </a>
-                                    </figure>
-                                    <div class="product-details">
-                                        <h3 class="product-title"> <a href="demo1-product.html">Battery Charger</a>
-                                        </h3>
-                                        <div class="ratings-container">
-                                            <div class="product-ratings">
-                                                <span class="ratings" style="width:100%"></span>
-                                                <!-- End .ratings -->
-                                                <span class="tooltiptext tooltip-top"></span>
-                                            </div>
-                                            <!-- End .product-ratings -->
-                                        </div>
-                                        <!-- End .product-container -->
-                                        <div class="price-box">
-                                            <span class="product-price">$49.00</span>
-                                        </div>
-                                        <!-- End .price-box -->
-                                    </div>
-                                    <!-- End .product-details -->
-                                </div>
-                                <div class="product-default left-details product-widget ">
-                                    <figure>
-                                        <a href="demo1-product.html">
-                                            <img src="{{ asset('client_assets') }}/assets/images/demoes/demo1/products/small/product-7.jpg"
-                                                width="84" height="84" alt="product">
-                                            <img src="{{ asset('client_assets') }}/assets/images/demoes/demo1/products/small/product-7-2.jpg"
-                                                width="84" height="84" alt="product">
-                                        </a>
-                                    </figure>
-                                    <div class="product-details">
-                                        <h3 class="product-title"> <a href="demo1-product.html">Computer Mouse</a>
-                                        </h3>
-                                        <div class="ratings-container">
-                                            <div class="product-ratings">
-                                                <span class="ratings" style="width:100%"></span>
-                                                <!-- End .ratings -->
-                                                <span class="tooltiptext tooltip-top"></span>
-                                            </div>
-                                            <!-- End .product-ratings -->
-                                        </div>
-                                        <!-- End .product-container -->
-                                        <div class="price-box">
-                                            <span class="product-price">$49.00</span>
-                                        </div>
-                                        <!-- End .price-box -->
-                                    </div>
-                                    <!-- End .product-details -->
-                                </div>
-                                <div class="product-default left-details product-widget ">
-                                    <figure>
-                                        <a href="demo1-product.html">
-                                            <img src="{{ asset('client_assets') }}/assets/images/demoes/demo1/products/small/product-8.jpg"
-                                                width="84" height="84" alt="product">
-                                            <img src="{{ asset('client_assets') }}/assets/images/demoes/demo1/products/small/product-8-2.jpg"
-                                                width="84" height="84" alt="product">
-                                        </a>
-                                    </figure>
-                                    <div class="product-details">
-                                        <h3 class="product-title"> <a href="demo1-product.html">Casual Note Bag</a>
-                                        </h3>
-                                        <div class="ratings-container">
-                                            <div class="product-ratings">
-                                                <span class="ratings" style="width:100%"></span>
-                                                <!-- End .ratings -->
-                                                <span class="tooltiptext tooltip-top"></span>
-                                            </div>
-                                            <!-- End .product-ratings -->
-                                        </div>
-                                        <!-- End .product-container -->
-                                        <div class="price-box">
-                                            <span class="product-price">$49.00</span>
-                                        </div>
-                                        <!-- End .price-box -->
-                                    </div>
-                                    <!-- End .product-details -->
-                                </div>
-                            </div>
-                            <!-- End .product-column -->
-                        </div>
-                        <!-- End .col-md-4 -->
-
-                        <div class="col-sm-6 col-md-4 pb-4 pb-md-0 appear-animate" data-animation-name="fadeInLeftShorter"
-                            data-animation-delay="800">
-                            <div class="product-column">
-                                <h3 class="section-sub-title ls-n-20">Latest Products</h3>
+                    <h3 class="section-sub-title ls-n-20">Latest Products</h3>
+                    <div class="">
+                    
+                            <div class="product-row d-flex">
                                 @foreach ($latestProduct as $item)
-                                    <div class="product-default left-details product-widget ">
+                                    <div class="product-default w-100 ">
                                         <figure>
                                             <a href="{{ route('detail', $item->id) }}">
                                                 <img src="{{ asset('storage/images') }}/{{ $item->image }}"
@@ -475,13 +287,10 @@
                                         <!-- End .product-details -->
                                     </div>
                                 @endforeach
-
-                                {{ $latestProduct->links() }}
-
-
+                                
                             </div>
+                            {{ $latestProduct->links() }}
                             <!-- End .product-column -->
-                        </div>
                         <!-- End .col-md-4 -->
                     </div>
                     <!-- End .row -->
@@ -574,132 +383,33 @@
                                                     @endforeach
                                                 </ul>
                                             </div>
-                                            {{-- <div class="col-lg-4">
-                                                <a href="#" class="nolink pl-0">VARIATION 2</a>
-                                                <ul class="submenu">
-                                                    <li><a href="category-list.html">List Types</a></li>
-                                                    <li><a href="category-infinite-scroll.html">Ajax Infinite
-                                                            Scroll</a>
-                                                    </li>
-                                                    <li><a href="category.html">3 Columns Products</a></li>
-                                                    <li><a href="category-4col.html">4 Columns Products</a></li>
-                                                    <li><a href="category-5col.html">5 Columns Products</a></li>
-                                                    <li><a href="category-6col.html">6 Columns Products</a></li>
-                                                    <li><a href="category-7col.html">7 Columns Products</a></li>
-                                                    <li><a href="category-8col.html">8 Columns Products</a></li>
-                                                </ul>
-                                            </div> --}}
-                                            {{-- <div class="col-lg-4 p-0">
-                                                <div class="menu-banner">
-                                                    <figure>
-                                                        <img src="{{ asset('client_assets') }}/assets/images/menu-banner.jpg"
-                                                            width="192" height="313" alt="Menu banner">
-                                                    </figure>
-                                                    <div class="banner-content">
-                                                        <h4>
-                                                            <span class="">UP TO</span><br />
-                                                            <b class="">50%</b>
-                                                            <i>OFF</i>
-                                                        </h4>
-                                                        <a href="demo1-shop.html" class="btn btn-sm btn-dark">SHOP
-                                                            NOW</a>
-                                                    </div>
-                                                </div>
-                                            </div> --}}
+                                           
                                         </div>
                                     </div>
                                     <!-- End .megamenu -->
                                 </li>
                                 <li>
-                                    <a href="demo1-product.html" class="sf-with-ul"><i
+                                    <a href="#" class="sf-with-ul"><i
                                             class="sicon-basket"></i>Products</a>
                                     <div class="megamenu megamenu-fixed-width">
                                         <div class="row">
-                                            <div class="col-lg-4">
-                                                <a href="#" class="nolink pl-0">PRODUCT PAGES</a>
+                                            <div class="col-lg-8">
+                                                <a href="#" class="nolink pl-0">PRODUCTS</a>
                                                 <ul class="submenu">
-                                                    <li><a href="product.html">SIMPLE PRODUCT</a></li>
-                                                    <li><a href="product-variable.html">VARIABLE PRODUCT</a></li>
-                                                    <li><a href="product.html">SALE PRODUCT</a></li>
-                                                    <li><a href="product.html">FEATURED & ON SALE</a></li>
-                                                    <li><a href="product-custom-tab.html">WITH CUSTOM TAB</a></li>
-                                                    <li><a href="product-sidebar-left.html">WITH LEFT SIDEBAR</a>
-                                                    </li>
-                                                    <li><a href="product-sidebar-right.html">WITH RIGHT SIDEBAR</a>
-                                                    </li>
-                                                    <li><a href="product-addcart-sticky.html">ADD CART STICKY</a>
-                                                    </li>
+                                                    @foreach ($listProduct as $item)
+                                                        <li><a
+                                                                href="{{ route('detail', $item->id) }}">{{ $item->name }}</a>
+                                                        </li>
+                                                    @endforeach
                                                 </ul>
                                             </div>
                                             <!-- End .col-lg-4 -->
 
-                                            <div class="col-lg-4">
-                                                <a href="#" class="nolink pl-0">PRODUCT LAYOUTS</a>
-                                                <ul class="submenu">
-                                                    <li><a href="product-extended-layout.html">EXTENDED LAYOUT</a>
-                                                    </li>
-                                                    <li><a href="product-grid-layout.html">GRID IMAGE</a></li>
-                                                    <li><a href="product-full-width.html">FULL WIDTH LAYOUT</a></li>
-                                                    <li><a href="product-sticky-info.html">STICKY INFO</a></li>
-                                                    <li><a href="product-sticky-both.html">LEFT & RIGHT STICKY</a>
-                                                    </li>
-                                                    <li><a href="product-transparent-image.html">TRANSPARENT
-                                                            IMAGE</a></li>
-                                                    <li><a href="product-center-vertical.html">CENTER VERTICAL</a>
-                                                    </li>
-                                                    <li><a href="#">BUILD YOUR OWN</a></li>
-                                                </ul>
-                                            </div>
-                                            <!-- End .col-lg-4 -->
-
-                                            <div class="col-lg-4 p-0">
-                                                <div class="menu-banner menu-banner-2">
-                                                    <figure>
-                                                        <img src="{{ asset('client_assets') }}/assets/images/menu-banner-1.jpg"
-                                                            alt="Menu banner" class="product-promo">
-                                                    </figure>
-                                                    <i>OFF</i>
-                                                    <div class="banner-content">
-                                                        <h4>
-                                                            <span class="">UP TO</span><br />
-                                                            <b class="">50%</b>
-                                                        </h4>
-                                                    </div>
-                                                    <a href="demo1-shop.html" class="btn btn-sm btn-dark">SHOP
-                                                        NOW</a>
-                                                </div>
-                                            </div>
-                                            <!-- End .col-lg-4 -->
                                         </div>
                                         <!-- End .row -->
                                     </div>
                                     <!-- End .megamenu -->
                                 </li>
-                                <li>
-                                    <a href="#" class="sf-with-ul"><i class="sicon-envelope"></i>Pages</a>
-
-                                    <ul>
-                                        <li><a href="wishlist.html">Wishlist</a></li>
-                                        <li><a href="cart.html">Shopping Cart</a></li>
-                                        <li><a href="checkout.html">Checkout</a></li>
-                                        <li><a href="dashboard.html">Dashboard</a></li>
-                                        <li><a href="demo1-about.html">About Us</a></li>
-                                        <li><a href="#">Blog</a>
-                                            <ul>
-                                                <li><a href="blog.html">Blog</a></li>
-                                                <li><a href="single.html">Blog Post</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="demo1-contact.html">Contact Us</a></li>
-                                        <li><a href="login.html">Login</a></li>
-                                        <li><a href="forgot-password.html">Forgot Password</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="blog.html"><i class="sicon-book-open"></i>Blog</a></li>
-                                <li><a href="demo1-about.html"><i class="sicon-users"></i>About Us</a></li>
-                                <li><a href="#"><i class="icon-cat-gift"></i>Special Offer!</a></li>
-                                <li><a href="https://1.envato.market/DdLk5" target="_blank"><i class="sicon-star"></i>Buy
-                                        Porto!<span class="tip tip-hot">Hot</span></a></li>
                             </ul>
                         </nav>
                     </div>

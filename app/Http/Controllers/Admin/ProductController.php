@@ -64,7 +64,7 @@ class ProductController extends Controller
             $request->image->storeAs('public/images', $fileName);
             $data['image'] = $fileName;
         }
-
+        // dd($data);
         // Tạo sản phẩm bằng Eloquent Model
         $product = Product::create($data);
 
